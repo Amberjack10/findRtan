@@ -33,8 +33,10 @@ public class card : MonoBehaviour
     // 카드 뒤집기
     public void openCard()
     {
+        // 카드가 2장 뒤집혀 있는 동안 다른 카드들 클릭 막기
         if (gameManager.I.cardCounter > 1) return;
 
+        //cardCounter : 현재 게임에 뒤집혀 있는 카드 개수
         gameManager.I.cardCounter++;
 
         // 카드 뒤집는 효과음 재생
@@ -70,6 +72,7 @@ public class card : MonoBehaviour
     {
         Destroy(gameObject);
 
+        // cardCounter를 0으로 만들어 초기화 시켜주기
         gameManager.I.cardCounter = 0;
         timeSpan = 0.0f;
     }
